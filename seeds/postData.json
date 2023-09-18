@@ -1,17 +1,14 @@
 [
     {
         "title": "Node rules",
-        "content": "Wow, node is the best. For real.",
-        "user_id": 1
+        "content": "Wow, node is the best. For real."
     },
     {
         "title": "Express is okay",
-        "content": "I'm indifferent about it.",
-        "user_id": 2
+        "content": "I'm indifferent about it."
     },
     {
         "title": "Javascript? What's that?",
-        "content": "I have never heard of javascript. What is it?",
-        "user_id": 3
+        "content": "I have never heard of javascript. What is it?"
     }
 ]
