@@ -1,0 +1,12 @@
+[
+    {
+        "content": "I agree!",
+        "post_id": 1,
+        "user_id": 1
+    },
+    {
+        "content": "You don't have any idea what you're talking about.",
+        "post_id": 2,
+        "user_id": 2
+    }
+]
