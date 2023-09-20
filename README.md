@@ -1,6 +1,6 @@
 
 OPEN ITEMS:
-1. seedDatabase() questions
+1. Exclude users passwords (see activity 22)
 
 
 RESOURCES:

@@ -28,7 +28,7 @@ router.get('/', async (req, res) => {
 })
 
 //all posts page
-
+//use the withAuth middle ware from 20 in the activities (already defined)
 
 //one post page 
 
