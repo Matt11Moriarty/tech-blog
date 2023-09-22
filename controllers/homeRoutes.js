@@ -28,32 +28,32 @@ router.get('/', async (req, res) => {
     }
 })
 
-//all posts page
-//use the withAuth middle ware from 20 in the activities (already defined)
+
+//one post page 
 router.get('/post/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
-                    attributes: ['username'], 
+                    attributes: ['username']
                 },
                 {
                     model: Comment,
-                    attributes: ['user_id', 'content', 'created_at']
+                    attributes: ['content', 'user_id', 'created_at']
                 }
             ]
-        })
+        });
         const post = postData.get({ plain: true });
-        console.log(post)
-    } 
-    catch (err) {
+
+        res.render('singlePost', {
+            ...post,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
         res.status(500).json(err);
     }
 })
-
-//one post page 
-
 
 
 //login page
