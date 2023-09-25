@@ -5,7 +5,6 @@ const postComment = async (event) => {
     
     const commentContent = document.querySelector('#comment-content').value.trim();
 
-    console.log("TEsT!");
     console.log(commentContent);
     if (commentContent) {
         const response = await fetch('/api/comments', {
@@ -20,4 +19,3 @@ const postComment = async (event) => {
 
 
 
-document.querySelector('.comment-form').addEventListener('submit', postComment);
