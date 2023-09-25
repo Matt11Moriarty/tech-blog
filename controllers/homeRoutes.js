@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models');
-const { findByPk } = require('../models/Post');
+// const { findByPk } = require('../models/Post');
 const withAuth = require('../utils/auth');
 
 
@@ -45,7 +45,7 @@ router.get('/post/:id', withAuth, async (req, res) => {
             ]
         });
         const post = postData.get({ plain: true });
-
+        console.log(post);
         res.render('singlePost', {
             ...post,
             logged_in: req.session.logged_in
