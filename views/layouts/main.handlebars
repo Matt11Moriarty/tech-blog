@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt's Tech Blog</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="bg-primary text-white py-2">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="my-0">Matt's Tech Blog</h1>
+                    <nav>
+                        <a class="text-white" href="/">Homepage</a> |
+                        {{#if logged_in}}
+                        <a class="text-white" href="/dashboard">Dashboard</a> |
+                        <button class="btn btn-link text-white" id="logout">Logout</button>
+                        {{else}}
+                        <a class="text-white" href="/login">Login</a>
+                        {{/if}}
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <main class="container mt-5">
+            {{{ body }}}
+        </main>
+        <footer class="text-center py-3">
+        </footer>
+    </div>
+
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
