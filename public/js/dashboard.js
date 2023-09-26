@@ -1,5 +1,3 @@
-
-
 const newPost = async (event) => {
     event.preventDefault();
 
@@ -21,7 +19,6 @@ const newPost = async (event) => {
         }
     }
 }
-
 
 const deletePost = async (event) => {
     const postId = event.target.dataset.id;

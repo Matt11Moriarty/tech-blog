@@ -1,5 +1,3 @@
-
-
 const postComment = async (event) => {
     event.preventDefault();
     
