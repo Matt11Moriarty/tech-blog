@@ -21,7 +21,6 @@ const seedDatabase = async () => {
     }
 
     const posts = await Post.findAll({ raw: true })
-    // console.log(posts);
 
     for (const comment of commentData) {
         await Comment.create({
@@ -30,10 +29,6 @@ const seedDatabase = async () => {
             post_id: posts[Math.floor(Math.random() * posts.length)].id
         })
     }
-
-    // const comments = await Comment.findAll({raw: true});
-    // console.log(comments);
-
 }
 
 seedDatabase();

@@ -1,3 +1,5 @@
+
+
 const newPost = async (event) => {
     event.preventDefault();
 
@@ -12,6 +14,33 @@ const newPost = async (event) => {
                     'Content-Type': 'application/json'
                 }
             });
+        if (response.ok) {
+            document.location.replace(`/dashboard`);
+        } else {
+            alert('Failed to add post');
+        }
     }
 }
+
+
+const deletePost = async (event) => {
+    const postId = event.target.dataset.id;
+
+    if (!postId) return;
+
+    const response = await fetch(`/api/post/${postId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    });
+    if (response.ok) {
+        document.location.replace(`/dashboard`);
+    } else {
+        alert('Failed to delete post.');
+    }
+
+}
+
+document.addEventListener('click', deletePost);
 document.querySelector('.new-post-form').addEventListener('submit', newPost);

@@ -40,12 +40,12 @@ router.get('/post/:id', withAuth, async (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['content', 'user_id', 'created_at']
+                    attributes: ['content', 'user_id', 'created_at'],
+                    include: [ User ]
                 }
             ]
         });
         const post = postData.get({ plain: true });
-        console.log(post);
         res.render('singlePost', {
             ...post,
             logged_in: req.session.logged_in
@@ -65,9 +65,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
                 }
             }
         );
-        console.log(req.session);
         const posts = postsData.map((post) => post.get({ plain: true }));
-        console.log(posts);
         res.render('dashboard', {
             posts,
             logged_in: req.session.logged_in
