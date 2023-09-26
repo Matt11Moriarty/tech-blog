@@ -31,7 +31,7 @@ N/A
 
 ## Usage
 
-Site URL: https://matt11moriarty.github.io/tech-blog/
+Site URL: https://young-mountain-95763-9cfe2914182b.herokuapp.com/
 
 1. Sign up using the login page
 2. View and comment on existing posts
