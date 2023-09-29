@@ -30,4 +30,23 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 })
+
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedPost = await Post.update(
+            {
+                title: req.body.title,
+                content: req.body.title
+            },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }
+        )
+    } catch (err) {
+        res.status(500).json(err);
+    };
+});
+
 module.exports = router;

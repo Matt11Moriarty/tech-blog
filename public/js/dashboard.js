@@ -20,6 +20,13 @@ const newPost = async (event) => {
     }
 }
 
+const updatePost = async () => {
+    
+    //
+
+
+}
+
 const deletePost = async (event) => {
     const postId = event.target.dataset.id;
 
