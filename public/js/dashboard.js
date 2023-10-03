@@ -20,17 +20,12 @@ const newPost = async (event) => {
     }
 }
 
-const updatePost = async () => {
-    
-    //
 
-
-}
 
 const deletePost = async (event) => {
     const postId = event.target.dataset.id;
 
-    if (!postId) return;
+    if (!event.target.classList.contains('del-post') ) return;
 
     const response = await fetch(`/api/post/${postId}`, {
         method: 'DELETE',

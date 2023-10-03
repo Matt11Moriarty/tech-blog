@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { Post } = require('../../models');
 
 router.post('/', async (req, res) => {
@@ -36,7 +37,7 @@ router.put('/:id', async (req, res) => {
         const updatedPost = await Post.update(
             {
                 title: req.body.title,
-                content: req.body.title
+                content: req.body.content
             },
             {
                 where: {
@@ -44,6 +45,7 @@ router.put('/:id', async (req, res) => {
                 }
             }
         )
+        res.status(200).json(updatedPost);
     } catch (err) {
         res.status(500).json(err);
     };
