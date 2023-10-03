@@ -24,5 +24,4 @@ const editPost = async (event) => {
     }
 }
 
-console.log("blah")
 document.querySelector('.edit-post-form').addEventListener('submit', editPost);
